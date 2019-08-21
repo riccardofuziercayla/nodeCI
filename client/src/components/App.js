@@ -24,7 +24,7 @@ class App extends Component {
               <Route path="/blogs/new" component={BlogNew} />
               <Route exact path="/blogs/:_id" component={BlogShow} />
               <Route path="/blogs" component={Dashboard} />
-              <Route path="/" component={Landing} />
+              <Route exact path="/" component={Landing} />
             </Switch>
           </div>
         </BrowserRouter>
@@ -33,4 +33,7 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
