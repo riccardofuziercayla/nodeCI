@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - '8'
 dist: trusty
+sudo: required
 services:
   - mongodb
   - redis-server
@@ -24,4 +25,4 @@ install:
 script:
   - nohup npm run start &
   - sleep 3
-  - npm run test
+  - npm run test --detectOpenHandles
